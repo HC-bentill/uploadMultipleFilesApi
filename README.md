@@ -1,10 +1,10 @@
 # uploadMultipleFilesApi --Henry
 
-In this assignment I used nodeJs, Express and Multer to handle multiple file uploads to a partiuclar directory on the server.
+-In this assignment I used nodeJs, Express and Multer to handle multiple file uploads to a partiuclar directory on the server.
 
-This repo contains an index.html(front-end) file that demonstrates an api request using fetch to post form data to the api
+-This repo contains an index.html(front-end) file that demonstrates an api request using fetch to post form data to the api
 
-esoponse from the api can be found in the console logs
+-Response from the api can be found in the console logs
 
 To use or test this repo code you would need to do the following:
 1. Download or clone this repo
