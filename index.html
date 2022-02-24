@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Upload Multiple files</title>
+    </head>
+    
+    <body>
+        <h1>Upload multiple Files</h1>
+        <form id="formElem" enctype="multipart/form-data">
+            <input type="file" id="inpFile" multiple>
+            <button id="btnUpload" type="submit">Upload Files</button>
+        </form>
+
+        <script>
+            const inpFile = document.getElementById("inpFile");
+            const formElem = document.getElementById("formElem");
+
+            formElem.onsubmit = (e) => {
+                e.preventDefault();
+                const formData = new FormData();
+
+                    console.log(inpFile.files);
+
+                    //destructure the array
+                    for (const file of inpFile.files){
+                        //similar to add a name attribute to an input field
+                        formData.append("myUploadedFile", file);
+                    }
+
+                    for(const [key, value] of formData){
+                        console.log(`Key: ${key}`);
+                        console.log(`Value: ${value}`);
+                    }
+
+                    fetch('http://localhost:3000/upload', {
+                        method: 'post',
+                        body: formData,
+                    })
+                    .catch(console.error);
+                };
+        </script>
+    </body>
+</html>
